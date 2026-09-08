@@ -1,0 +1,6 @@
+# Phases 1-4 need only NumPy.
+numpy>=1.26
+
+# Phase 5 onward. If this build does not suit your machine, install PyTorch
+# using the command from https://pytorch.org/get-started/locally/ instead.
+torch>=2.0

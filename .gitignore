@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+*.pt
+*.pth
+checkpoints/
+data/
+outputs/
+
+# Downloaded training corpus (fetch with sample-data/download_corpus.py)
+sample-data/shakespeare.txt
+
+# Generated book output (make book / make epub)
+build/

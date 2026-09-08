@@ -1,0 +1,4 @@
+hello neural network
+hello language model
+learning means changing parameters to reduce loss
+small models are useful for understanding big ideas

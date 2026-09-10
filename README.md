@@ -1,13 +1,36 @@
 # Neural Networks From Scratch — The Exercise Lab
 
-Twelve chapters of exercises for understanding how neural networks are actually trained. You
-write every line: the forward pass, the loss, the gradients by hand, and finally a small autograd
-engine, so that nothing in the training loop is left as magic.
+Twelve chapters of exercises that build a neural network from nothing. You write every line: the
+forward pass, the loss, the gradients derived by hand, then your own autograd engine, and finally
+a small GPT you train yourself. NumPy only until Chapter 5, PyTorch after that.
 
 No frameworks until you have earned them. No pretrained models. No hidden steps.
 
-Every exercise ships with a reference solution that asserts its own definition of done, so you can
-check yourself without anyone marking your work.
+## Run the tests
+
+Every chapter ships with a worked reference solution, and those solutions check themselves.
+
+```bash
+pip install -r requirements.txt
+
+python3 solutions/verify_all.py --quick   # 20 checks, nothing to download
+
+python3 sample-data/download_corpus.py    # ~1 MB, needed by the last 3 checks
+python3 solutions/verify_all.py           # all 23 checks
+```
+
+A zero exit code means every chapter actually met its goal, not merely that it ran without
+crashing. Chapters 1–11 are covered by those 23 checks; Chapter 12 is a written exercise with a
+worked answer rather than a runnable one.
+
+## The book is separate, and optional
+
+This repository is the free companion to the book *The Practical Introduction to AI* by Arkady
+Mishiev. **The book is not in this repository, and you do not need it to use the lab** — every
+chapter brief states what to build and how to know you are done, and every solution is here.
+
+That split is deliberate, and it extends to the licensing: **this code is MIT licensed (see
+[`LICENSE`](LICENSE)); the book is a separate work, sold separately, under its own licence.**
 
 ## Part 1 — Neural network fundamentals (Chapters 1–5)
 
@@ -105,27 +128,16 @@ Every chapter has a worked solution under `solutions/`. **Attempt the chapter fi
 in the struggle, and reading the answer first spends the learning without buying anything. They
 are there for when you are genuinely stuck, and to diff against once you have something working.
 
-Every solution runs standalone and meets its chapter's definition of done:
+Each one also runs standalone:
 
 ```bash
 python3 solutions/01-single-neuron/train.py
-python3 solutions/verify_all.py --quick   # run them all, skipping the slow training runs
-python3 solutions/verify_all.py           # everything, including the GPT training run
 ```
-
-A zero exit code means every chapter actually met its goal — not merely that it ran without
-crashing.
 
 ## Environment
 
-Python 3.11+.
-
-```bash
-pip install -r requirements.txt
-```
-
-Chapters 1–4 need only NumPy. Chapter 5 onward needs PyTorch — if the pinned build in
-`requirements.txt` does not suit your machine, install PyTorch using the command from the
+Python 3.11+. Chapters 1–4 need only NumPy. Chapter 5 onward needs PyTorch — if the pinned build
+in `requirements.txt` does not suit your machine, install PyTorch using the command from the
 [official PyTorch installation page](https://pytorch.org/get-started/locally/) instead.
 
 ## Corpus for Part 2 (Chapters 6–12)
@@ -147,12 +159,6 @@ expect.
 Curated tutorials, videos and books, mapped chapter by chapter:
 [`RESOURCES.md`](RESOURCES.md). Read them *after* attempting a chapter — an explanation you meet
 while stuck lands very differently from one read cold.
-
-## The book
-
-These exercises are the free companion to *The Practical Introduction to AI* by Arkady Mishiev,
-which explains the ideas behind Chapters 1–5 in full. The lab stands on its own: each chapter
-brief states what to build and how to know you are done, and every solution is here.
 
 ## Licence
 
